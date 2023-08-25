@@ -1,0 +1,28 @@
+.container-header {
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: rgb(102, 100, 100);
+    color: white;
+}
+
+.container-logo {
+    display: flex;
+}
+
+.logo {
+    width: 130px;
+}
+
+.container-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+h1 {
+    padding: 25px;
+    font-weight: bold;
+    font-size: 35px;
+}
