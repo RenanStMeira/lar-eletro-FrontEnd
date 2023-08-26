@@ -26,3 +26,13 @@ h1 {
     font-weight: bold;
     font-size: 35px;
 }
+
+.paragrafo {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    margin: 25px;
+    font-size: 18px;
+}
