@@ -4,7 +4,7 @@ import Padrao from '../../assets/pdrao-entrada.jpg';
 import Residence from '../../assets/residencial.jpg';
 import Tug from '../../assets/tug.jpeg';
 
-import './service.css';
+import './jobs.css';
 
 function Service() {
     return (
