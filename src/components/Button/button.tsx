@@ -1,9 +1,14 @@
 import './button.css';
 
-function Button() {
+type ButtonProps = {
+    children: React.ReactNode;
+    onClick: () =>void;
+}
+
+function Button({ children, onClick }:ButtonProps) {
     return(
-        <button>
-            ORÇAR
+        <button onClick={onClick}>
+            {children}
         </button>
     );
 };

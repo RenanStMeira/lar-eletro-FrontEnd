@@ -1,0 +1,25 @@
+.container-services {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.container-services > div {
+  flex: 1;
+  padding: 10px;
+}
+
+.container-services-img {
+  max-width: 330px;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 10px 0;
+}
