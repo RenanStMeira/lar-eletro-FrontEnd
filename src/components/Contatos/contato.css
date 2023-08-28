@@ -11,7 +11,8 @@
 .container-div {
     background-color: rgba(0, 0, 0, 0.493);
     width: 550px;
-    height: 55vh;
+    height: 60vh;
+    margin-bottom: 40px;
 }
 
 h1 {

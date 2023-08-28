@@ -27,10 +27,14 @@ function Modal({isOpen, setModaOpen}: any) {
                         <label htmlFor="">Numero:</label>
                         <input type="text" />
 
-                        <label htmlFor="">Senha:</label>
-                        <input type="password" name="" id="" />
-                        <button>Enviar</button>
-                        <button onClick={setModaOpen} className='close'>Fechar</button>
+                        <label htmlFor="">Telefone::</label>
+                        <input type="text" name="" id="" />
+
+                        <label htmlFor="">Serviço:</label>
+                        <input type="text" />
+
+                        <button>ENVIAR</button>
+                        <button onClick={setModaOpen} className='close'>FECHAR</button>
                     </form>
              </div>
         </section>    
