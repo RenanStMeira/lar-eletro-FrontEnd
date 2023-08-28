@@ -1,11 +1,12 @@
 import './links.css';
+import { Link } from 'react-router-dom';
 
 function Links() {
     return(
         <div className="container-links">
-            <a href="">CONTATO</a>
-            <a href="">SERVIÇOS</a>
-            <a href="https://www.facebook.com/Lareletroservice" target='blank'>SOCIAL</a>
+            <Link to="/">HOME</Link>
+            <Link to="/services">SERVIÇOS</Link>
+            <Link to="/contato">CONTATO</Link>
         </div>
     );
 };

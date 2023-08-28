@@ -1,17 +1,18 @@
-import Footer from "./components/Footer/footer";
-import Header from "./components/Header/header"
-import Main from "./components/Main/main";
+import { Routes, Route } from 'react-router-dom';
+import Home from "./pages/Home";
+import Services from './pages/Services';
+import Contact from './pages/Contact';
 
 function App() {
-
-  return (
-    <div>      
-      <Header />
-      <Main />
-      <Footer />
-    </div>
-   
-  );
+    return (
+        <div className="app">
+            <Routes>
+                <Route path="/" element={ <Home /> } />
+                <Route path="/services" element={ <Services /> } />
+                <Route path="/contato" element={ <Contact /> } />
+            </Routes>
+        </div>
+    );
 };
 
 export default App;

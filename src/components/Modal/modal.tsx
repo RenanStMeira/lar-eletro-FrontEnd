@@ -1,15 +1,19 @@
 import './modal.css'
 
 function Modal({isOpen, setModaOpen}: any) {
+    
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+    }
 
     if(isOpen){
 
         return(
             <section className="container-background">
                 <div className='div'>
-                    <form action="" className='form'>
-                        <label htmlFor="">Nome:</label>
-                        <input type="text" />
+                    <form action="" className='form' onSubmit={handleSubmit}>
+                        <label htmlFor="nome">Nome:</label>
+                        <input type="text" id='nome'/>
 
                         <label htmlFor="">Email:</label>
                         <input type="email" name="" id="" placeholder='exemplo@exemplo.com'/>
@@ -29,8 +33,7 @@ function Modal({isOpen, setModaOpen}: any) {
                         <button onClick={setModaOpen} className='close'>Fechar</button>
                     </form>
              </div>
-        </section>
-               
+        </section>    
             
         );
     };
