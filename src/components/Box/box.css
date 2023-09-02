@@ -1,3 +1,8 @@
+.section-contact {
+    background-color: rgba(128, 128, 128, 0.527);
+    width: 100%;
+}
+
 .contact-jobs > input {
     padding: 8px;
     width: 280px;
@@ -10,7 +15,7 @@
     width: 35%;
     margin-left: 100px;
     padding: 9px;
-    margin-top: 40px;
+    margin-top: 90px;
 }
 
 .section-content {
@@ -47,5 +52,12 @@ textarea {
 
 h3 {
     color: white;
-    padding: 8px;
+
+}
+
+.btn-send {
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 90px;
+    
 }
