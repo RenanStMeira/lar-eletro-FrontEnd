@@ -38,19 +38,18 @@ input {
     font-size: 15px;
     border: none;
     border-radius: 20px;
-    width: 360px;
+    width: 300px;
     text-align: center;
 }
 
 button {
-    background-color: rgba(5, 156, 5, 0.836);
+    background-color: rgba(7, 131, 7, 0.945);
     cursor: pointer;
     border: none;
     border-radius: 10px;
     padding: 8px;
     color: white;
-    margin-bottom: 4px;
-    margin-top: 18px;
+    margin-top: 10px;
 }
 
 .close {

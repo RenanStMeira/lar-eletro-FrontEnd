@@ -4,21 +4,14 @@ import Tug from '../../assets/tug.jpeg';
 import Ent from '../../assets/pdrao-entrada.jpg';
 import Tub from '../../assets/tubulacao.jpg';
 import Ress from '../../assets/residencial.jpg';
-import Modal from "../Modal/modal";
 import './main.css';
-import { useState } from 'react';
+
 
 function Main() {
-  const [openModal, setOpenModal] = useState(false)
-
 
     return(
         
-        <main>
-            <button className="btn" onClick={() => setOpenModal(true)}>⚡ ORÇAMENTO</button>
-            <Modal isOpen={openModal} setModaOpen={() => setOpenModal(!openModal)} />
-                    
-
+        <main>                   
             <div className="container">
                 <div className="product">
                     <h3>Instalação de ventiladores</h3>
