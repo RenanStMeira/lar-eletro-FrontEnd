@@ -1,17 +1,34 @@
-.login-form-wrap {
-    width: 10%;
-    padding: 5px;
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(128, 128, 128, 0.658);
 }
 
-.input-login, .input-login2 {
-    width: 190px;
-    font-size: 15px;
-}
-.input-login2 {
-    margin-top: 9px;
+.form-login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.btn-login-enter {
-    margin: 15px;
-    margin-left: 55px;
+.input-email {
+    padding: 10px;
+    margin: 5px;
+}
+
+.input-password {
+    margin: 5px;
+} 
+
+.btn {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 100px;
 }

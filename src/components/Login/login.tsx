@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import axios from 'axios';
 import './login.css';
 
-const Login: React.FC = () => {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
-  const [showLoginForm, setShowLoginForm] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState(false); // Estado para controlar a exibição do modal
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,50 +28,41 @@ const Login: React.FC = () => {
         }
       );
 
-      // Se a resposta for bem-sucedida, você pode lidar com a autenticação aqui
-      console.log(response.data);
+      localStorage.setItem('token', response.data.token);
+      window.location.href = '/services';
     } catch (err) {
-      if (axios.isAxiosError(err)) {
-        if (err.response) {
-          setError('Usuário ou senha inválidos');
-        } else {
-          setError('Erro ao acessar o servidor');
-        }
-      }
+      setError('Usuário ou senha inválidos');
     }
   };
 
-  const toggleLoginForm = () => {
-    setShowLoginForm(!showLoginForm);
-  };
-
   return (
-    <div className='login-form-wrap'>
-      {!showLoginForm && (
-        <button onClick={toggleLoginForm} className="btn-login-enter">ENTRAR</button>
-      )}
-      {showLoginForm && (
-        <form className='login-form' onSubmit={handleLogin}>
-          <input
-            className="input-login"
-            type='email'
-            name='email'
-            placeholder='Email'
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            className="input-login2"
-            type='password'
-            name='password'
-            placeholder='Password'
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type='submit' className='btn-login'>Login</button>
-        </form>
+    <div>
+      <button onClick={openModal}>ENTRAR</button> {/* Botão para abrir o modal */}
+      {showModal && ( // Renderize o modal se showModal for verdadeiro
+        <div className="modal">
+          <form className="form-login" onSubmit={handleLogin}>
+            <input
+              className="input-email"
+              type='email'
+              name='email'
+              placeholder='Email'
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              className="input-password"
+              type='password'
+              name='password'
+              placeholder='Password'
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type='submit' className="button">LOGIN</button>
+            <button onClick={closeModal} className="close">CANCELAR</button> {/* Botão para fechar o modal */}
+          </form>
+        </div>
       )}
       {error && <p>{error}</p>}
     </div>
