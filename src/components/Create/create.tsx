@@ -1,31 +1,27 @@
-import React, { useState } from "react";
-import axios from 'axios';
-import './modal.css';
+import React, { useState } from 'react';
+import './create.css';
+import { createUser } from '../../Service/api';
 
-function Modal({ isOpen, setModalOpen }: any) {
+interface ICreateProps {
+  isOpen: boolean;
+  setModalOpen: (isOpen: boolean) => void;
+}
+
+function Create({ isOpen, setModalOpen }: ICreateProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [contato, setContato] = useState('');
 
-  // const [error, setError] = useState<string | null>(null);
-
   const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        'http://localhost:3333/create',
-        { name, email, password, contato },
-        {
-          headers: { 'Content-Type': 'application/json' }
-        }
-      );
-
-      localStorage.setItem('token', response.data.token);
+      const response = await createUser(name, email, password, contato);
+      localStorage.setItem('token', response.token);
       window.location.href = '/services';
     } catch (err) {
-      // setError('Usuário ou senha inválidos');
+      // Trate o erro conforme necessário
     }
   };
 
@@ -59,4 +55,4 @@ function Modal({ isOpen, setModalOpen }: any) {
   );
 }
 
-export default Modal;
+export default Create;

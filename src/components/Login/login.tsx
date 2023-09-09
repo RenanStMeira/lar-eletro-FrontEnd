@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import axios from 'axios';
-import './login.css';
+import './Login.css';
+import { login } from '../../Service/api';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
-  const [showModal, setShowModal] = useState(false); // Estado para controlar a exibição do modal
+  const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
     setShowModal(true);
@@ -20,25 +20,41 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        'http://localhost:3333/login',
-        { email, password },
-        {
-          headers: { 'Content-Type': 'application/json' }
-        }
-      );
+      const response = await login(email, password);
 
+      // Suponha que a resposta contém o token de autenticação
       localStorage.setItem('token', response.data.token);
+
+      // Armazena o email do usuário
+      localStorage.setItem('emailUsuario', email);
+
+      // Redirecionar para a página de serviços ou apropriada
       window.location.href = '/services';
     } catch (err) {
       setError('Usuário ou senha inválidos');
     }
   };
 
+  const handleLogout = () => {
+    // Limpe os dados de autenticação, por exemplo, remova o token
+    localStorage.removeItem('token');
+
+    // Limpe o email do usuário
+    localStorage.removeItem('emailUsuario');
+
+    // Redirecione o usuário para a página de login
+    window.location.href = "/";
+  };
+
   return (
     <div>
-      <button onClick={openModal}>ENTRAR</button> {/* Botão para abrir o modal */}
-      {showModal && ( // Renderize o modal se showModal for verdadeiro
+      {localStorage.getItem('token') ? (
+        <button onClick={handleLogout}>SAIR</button>
+      ) : (
+        <button onClick={openModal}>ENTRAR</button>
+      )}
+
+      {showModal && (
         <div className="modal">
           <form className="form-login" onSubmit={handleLogin}>
             <input
@@ -60,11 +76,11 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <button type='submit' className="button">LOGIN</button>
-            <button onClick={closeModal} className="close">CANCELAR</button> {/* Botão para fechar o modal */}
+            <button onClick={closeModal} className="close">FECHAR</button>
+            {error && <p className="erro">{error}</p>}
           </form>
         </div>
       )}
-      {error && <p>{error}</p>}
     </div>
   );
 }
