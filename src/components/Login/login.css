@@ -32,3 +32,10 @@
     justify-content: center;
     margin-right: 100px;
 }
+
+.erro {
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    background-color: gray;
+}
