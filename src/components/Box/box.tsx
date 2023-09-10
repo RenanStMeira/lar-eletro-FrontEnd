@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './box.css';
 import { sendContactMessage } from '../../Service/api';
+import { Section, DivContainerText, DivContent, Message, TitleMessage, InputContainer } from './style';
 
 function Box() {
   const [name, setNome] = useState('');
@@ -41,26 +41,26 @@ function Box() {
   };
 
   return (
-    <section className="section-contact">
-      <div className='container-text'>
+    <Section >
+      <DivContainerText >
         <h4>Precisa de uma visita, nós entramos em contato com você</h4>
-      </div>
-      <div className='section-content'>
-        <div className='contact-jobs'>
+      </DivContainerText>
+      <DivContent >
+        <InputContainer >
           <input type="text" placeholder='Seu Nome' value={name} onChange={(e) => setNome(e.target.value)} />
           <input type="email" placeholder='E-mail' value={email} onChange={(e) => setEmail(e.target.value)} />
           <input type="text" placeholder='Contato Para Contato' value={contato} onChange={(e) => setContato(e.target.value)} />
-        </div>
-      </div>
-      <div className="message">
-        <h3>Deixe sua mensagem</h3>
+        </InputContainer>
+      </DivContent>
+      <Message className="message">
+        <TitleMessage >Deixe sua mensagem</TitleMessage>
         <textarea name="mensagem" id="mensagem" cols={37} rows={10} value={mensagem} onChange={(e) => setMensagem(e.target.value)}></textarea>
         <button className='btn-send' onClick={handleSubmit}>Enviar</button>
 
         {error && <p className="erro">{error}</p>}
         {successMessage && <p className="success">{successMessage}</p>}
-      </div>
-    </section>
+      </Message>
+    </Section>
   );
 }
 

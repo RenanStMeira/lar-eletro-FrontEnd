@@ -9,7 +9,7 @@ export const MainContainer = styled.main`
     margin-bottom: 80px;
 
     @media (max-width: 768px) {
-        width: 100%;
+        width: 92%;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
