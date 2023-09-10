@@ -3,7 +3,7 @@ import Logo3 from '../../assets/logo2.jpg';
 import Links from "../Links/links";
 import Login from "../Login/login";
 import Modal from '../Create/create';
-import './header.css';
+import { HeaderNav, Logo, ContentDiv, ContantDivLinks, ButtonHeader, NavBtn } from './style';
 
 
 function Header() {
@@ -21,27 +21,25 @@ function Header() {
     }, []);
   
     return (
-      <header className="container-header">
-        <div className="container-logo">
-          <img src={Logo3} width={100} alt="logo" className="logo" />
-        </div>
-        <div className="container-info">
+      <HeaderNav >
+        <Logo src= {Logo3}/>
+        <ContentDiv>
           <h1>Lar Eletro Services</h1>
-        </div>
-        <div className="container-link">
+        </ContentDiv>
+        <ContantDivLinks>
           {emailUsuario ? (
-            <p className='paragraph-login'>{emailUsuario}!</p>
+            <p>{emailUsuario}!</p>
           ) : (
             <p></p>
           )}
           <Links />
-        </div>
-        <div className='modal-section'>
+        </ContantDivLinks>
+        <NavBtn className='modal-section'>
           <Login />
-          <button onClick={() => setOpenModal(true)} className='btn'>CADASTRO</button>
+          <ButtonHeader onClick={() => setOpenModal(true)} className='btn'>CADASTRO</ButtonHeader>
           <Modal isOpen={openModal} setModalOpen={() => setOpenModal(false)} />
-        </div>
-      </header>
+        </NavBtn>
+      </HeaderNav>
     );
   }
   

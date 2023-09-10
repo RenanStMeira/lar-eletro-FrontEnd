@@ -7,6 +7,10 @@ a {
     text-decoration: none;
     margin-left: 15px;
     color: white;
+    background-color: green;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
 }
 
 a:hover {
