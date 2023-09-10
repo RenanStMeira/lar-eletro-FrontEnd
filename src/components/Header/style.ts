@@ -5,7 +5,8 @@ display: inline-flex;
 background-color: rgb(82, 81, 81);
 color: white;   
 width: 100%;
-justify-content: space-between;
+justify-content: space-around;
+
 
 @media (max-width: 768px) {
     padding: 0 1rem;
@@ -16,10 +17,9 @@ justify-content: space-between;
 `;
 
 export const Logo = styled.img`
-width: 70px;
-height: 70px;
-padding: 8px;
-margin: 10px;
+width: 40px;
+align-items: center;
+margin: auto;
 
 @media (max-width: 768px){
     margin-left: 125px;
@@ -35,6 +35,8 @@ align-items: center;
 
 @media (max-width: 768px){
     font-size: 12px;
+    text-align: center;
+    margin: auto;
 }
 `;
 

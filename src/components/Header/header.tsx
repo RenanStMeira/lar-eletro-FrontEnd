@@ -36,7 +36,7 @@ function Header() {
         </ContantDivLinks>
         <NavBtn className='modal-section'>
           <Login />
-          <ButtonHeader onClick={() => setOpenModal(true)} className='btn'>CADASTRO</ButtonHeader>
+          <ButtonHeader onClick={() => setOpenModal(true)} >CADASTRO</ButtonHeader>
           <Modal isOpen={openModal} setModalOpen={() => setOpenModal(false)} />
         </NavBtn>
       </HeaderNav>

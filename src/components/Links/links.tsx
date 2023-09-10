@@ -1,13 +1,13 @@
-import './links.css';
 import { Link } from 'react-router-dom';
+import { DivContenainerLinks } from './style';
 
 function Links() {
     return(
-        <div className="container-links">
+        <DivContenainerLinks >
             <Link to="/">HOME</Link>
             <Link to="/services">SERVIÇOS</Link>
             <Link to="/contato">CONTATO</Link>
-        </div>
+        </DivContenainerLinks>
     );
 };
 
