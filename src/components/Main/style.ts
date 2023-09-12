@@ -41,6 +41,8 @@ export const DivProduct = styled.div`
     padding: 8px;
     border: none;
     border-radius: 8px;
+    text-decoration: none;
+    color: white;
     }
 
     @media (max-width: 768px) {

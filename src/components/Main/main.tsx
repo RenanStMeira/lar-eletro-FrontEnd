@@ -9,7 +9,7 @@ function Main() {
               <h3>{product.name}</h3>
               <Image src={product.imageSrc} alt={product.name}/>
               <p className='price'>{product.price}</p>
-              <a href="https://encurtador.com.br/dnzU0" target='_blank'>Entre em Contato</a>
+              <a className="contact" href="https://encurtador.com.br/dnzU0" target='_blank'>Entre em Contato</a>
             </DivProduct>
           ))}
         </MainContainer>
