@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:3333';
+const API_BASE_URL = 'https://lar-eletro-service-ae58db1686af.herokuapp.com/';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -9,7 +9,7 @@ const api = axios.create({
 
 export async function login(email: string, password: string) {
   return axios.post(
-    'http://localhost:3333/login',
+    'https://lar-eletro-service-ae58db1686af.herokuapp.com/login',
     { email, password },
     {
       headers: { 'Content-Type': 'application/json' }
